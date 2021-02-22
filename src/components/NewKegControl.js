@@ -3,7 +3,7 @@ import NewKegForm from './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
 
-class NewKegControl extends React.Component {
+class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -109,4 +109,4 @@ class NewKegControl extends React.Component {
   }
 }
 
-export default NewKegControl;
+export default KegControl;
