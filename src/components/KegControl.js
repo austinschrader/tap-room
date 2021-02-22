@@ -26,19 +26,6 @@ class KegControl extends React.Component {
     }
   };
 
-  newKegClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        selectedKeg: null,
-        visibleView: 2,
-      });
-    } else {
-      this.setState({
-        visibleView: 2,
-      });
-    }
-  };
-
   handleBuy = () => {
     const quantityOfKeg = this.state.selectedKeg.quantity;
     const restockedKeg = {
