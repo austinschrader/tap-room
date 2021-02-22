@@ -7,21 +7,21 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleView: 0,
+      formVisibleOnPage: false,
       masterKegList: [],
       selectedKeg: null,
     };
   }
 
-  listClick = () => {
+  handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
         selectedKeg: null,
-        visibleView: 1,
+        formVisibleOnPage: false,
       });
     } else {
       this.setState({
-        visibleView: 1,
+        formVisibleOnPage: !prevState.formVisibleOnPage,
       });
     }
   };
@@ -65,7 +65,10 @@ class KegControl extends React.Component {
 
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.setState({ masterKegList: newMasterKegList, visibleView: 1 });
+    this.setState({
+      masterKegList: newMasterKegList,
+      formVisibleOnPage: false,
+    });
   };
 
   handleChangingSelectedKeg = (id) => {
@@ -101,7 +104,7 @@ class KegControl extends React.Component {
     }
     return (
       <>
-        <button onClick={this.listClick}>Keg List</button>
+        <button onClick={this.handleClick}>Keg List</button>
         <button onClick={this.newKegClick}>Add new Keg</button>
         {currentlyVisibleState}
       </>
