@@ -102,6 +102,7 @@ class KegControl extends React.Component {
           onKegSelection={this.handleChangingSelectedKeg}
         />
       );
+      buttonText = 'Add Keg';
     }
     return (
       <>
