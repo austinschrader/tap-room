@@ -14,12 +14,12 @@ function KegDetail(props) {
   return (
     <>
       <h2>Keg Information Page</h2>
-      <h4>{keg.name}</h4>
-      <h4>{keg.brand}</h4>
-      <h4>{keg.price}</h4>
-      <h4>{keg.alcoholContent}</h4>
-      <h4>{keg.quantity}</h4>
-      <h4>{keg.id}</h4>
+      <h4>Name: {keg.name}</h4>
+      <h4>Brand: {keg.brand}</h4>
+      <h4>Price: {keg.price}</h4>
+      <h4>ABV: {keg.alcoholContent}</h4>
+      <h4>Quantity: {keg.quantity}</h4>
+      {/* <h4>{keg.id}</h4> */}
       <button type='button' onClick={props.onRestock}>
         Restock
       </button>

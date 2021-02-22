@@ -8,12 +8,12 @@ function Keg(props) {
     return (
       <>
         <div onClick={() => props.whenKegClicked(props.id)}>
-          <h4> {props.name} </h4>
-          <h4> {props.brand} </h4>
-          <h4> {props.price} </h4>
-          <h4> {props.alcoholContent} </h4>
-          <h4> {props.quantity} </h4>
-          <h4> {props.id} </h4>
+          <h4>Name: {props.name} </h4>
+          <h4>Brand: {props.brand} </h4>
+          <h4>Price: {props.price} </h4>
+          <h4>ABV: {props.alcoholContent} </h4>
+          <h4>Quantity: {props.quantity} </h4>
+          {/* <h4> {props.id} </h4> */}
         </div>
       </>
     );
@@ -21,12 +21,12 @@ function Keg(props) {
     return (
       <>
         <div onClick={() => props.whenKegClicked(props.id)}>
-          <h4> {props.name} </h4>
-          <h4> {props.brand} </h4>
-          <h4> {props.price} </h4>
-          <h4> {props.alcoholContent} </h4>
-          <h4> {props.quantity} </h4>
-          <h4> {props.id} </h4>
+          <h4>Name: {props.name} </h4>
+          <h4>Brand: {props.brand} </h4>
+          <h4>Price: {props.price} </h4>
+          <h4>ABV: {props.alcoholContent} </h4>
+          <h4>Quantity: {props.quantity} </h4>
+          {/* <h4> {props.id} </h4> */}
         </div>
       </>
     );
