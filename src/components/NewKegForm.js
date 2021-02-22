@@ -6,41 +6,11 @@ function NewKegForm(props) {
   return (
     <>
       <form onSubmit={handleNewKegFormSubmission}>
-        <input
-          type='text'
-          name='name'
-          placeholder='Keg name'
-          value='Barracuda'
-          required
-        />
-        <input
-          type='text'
-          name='brand'
-          placeholder='Brand'
-          value='Heff'
-          required
-        />
-        <input
-          type='number'
-          name='price'
-          placeholder='Price'
-          value='5'
-          required
-        />
-        <input
-          type='number'
-          name='alcoholContent'
-          placeholder='ABV'
-          value='4'
-          required
-        />
-        <input
-          type='number'
-          name='quantity'
-          placeholder='Quantity'
-          value='2'
-          required
-        />
+        <input type='text' name='name' placeholder='Keg name' required />
+        <input type='text' name='brand' placeholder='Brand' required />
+        <input type='number' name='price' placeholder='Price' required />
+        <input type='number' name='alcoholContent' placeholder='ABV' required />
+        <input type='number' name='quantity' placeholder='Quantity' required />
         <button type='submit'>Add Keg</button>
       </form>
     </>
@@ -51,9 +21,9 @@ function NewKegForm(props) {
     props.onNewKegCreation({
       name: event.target.name.value,
       brand: event.target.brand.value,
-      price: event.target.price.value,
-      alcoholContent: event.target.alcoholContent.value,
-      quantity: event.target.quantity.value,
+      price: parseInt(event.target.price.value),
+      alcoholContent: parseInt(event.target.alcoholContent.value),
+      quantity: parseInt(event.target.quantity.value),
       id: v4(),
     });
   }
