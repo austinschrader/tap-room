@@ -20,9 +20,9 @@ class KegControl extends React.Component {
         formVisibleOnPage: false,
       });
     } else {
-      this.setState({
+      this.setState((prevState) => ({
         formVisibleOnPage: !prevState.formVisibleOnPage,
-      });
+      }));
     }
   };
 
@@ -80,6 +80,7 @@ class KegControl extends React.Component {
 
   render() {
     let currentlyVisibleState = null;
+    let buttonText = null;
     if (this.state.selectedKeg != null) {
       currentlyVisibleState = (
         <KegDetail
@@ -88,25 +89,24 @@ class KegControl extends React.Component {
           onBuy={this.handleBuy}
         />
       );
-    } else if (this.state.visibleView === 0) {
-      currentlyVisibleState = null;
-    } else if (this.state.visibleView === 1) {
+      buttonText = 'Return to Keg List';
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = (
+        <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
+      );
+      buttonText = 'Return to Keg List';
+    } else {
       currentlyVisibleState = (
         <KegList
           kegList={this.state.masterKegList}
           onKegSelection={this.handleChangingSelectedKeg}
         />
       );
-    } else if (this.state.visibleView === 2) {
-      currentlyVisibleState = (
-        <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
-      );
     }
     return (
       <>
-        <button onClick={this.handleClick}>Keg List</button>
-        <button onClick={this.newKegClick}>Add new Keg</button>
         {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </>
     );
   }
