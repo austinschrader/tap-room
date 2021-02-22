@@ -40,6 +40,7 @@ Keg.propTypes = {
   alcoholContent: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   id: PropTypes.string,
+  whenKegClicked: PropTypes.func,
 };
 
 export default Keg;
