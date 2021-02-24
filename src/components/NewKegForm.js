@@ -3,6 +3,18 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 function NewKegForm(props) {
+  function handleNewKegFormSubmission(event) {
+    event.preventDefault();
+    props.onNewKegCreation({
+      name: event.target.name.value,
+      brand: event.target.brand.value,
+      price: parseInt(event.target.price.value),
+      alcoholContent: parseInt(event.target.alcoholContent.value),
+      quantity: parseInt(event.target.quantity.value),
+      id: v4(),
+    });
+  }
+
   return (
     <>
       <form onSubmit={handleNewKegFormSubmission}>
@@ -15,18 +27,6 @@ function NewKegForm(props) {
       </form>
     </>
   );
-
-  function handleNewKegFormSubmission(event) {
-    event.preventDefault();
-    props.onNewKegCreation({
-      name: event.target.name.value,
-      brand: event.target.brand.value,
-      price: parseInt(event.target.price.value),
-      alcoholContent: parseInt(event.target.alcoholContent.value),
-      quantity: parseInt(event.target.quantity.value),
-      id: v4(),
-    });
-  }
 }
 
 NewKegForm.propTypes = {
